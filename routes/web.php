@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Candle;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,9 +22,6 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/candles', function () {
-    return view('candles');
-});
 
 Route::get('/login', function () {
     return view('login');
@@ -37,8 +35,19 @@ Route::get('/cart', function () {
     return view('cart');
 });
 
-Route::get('/candle', function () {
-    return view('candle');
+// Route::get('/candle', function () {
+//     return view('candle');
+// });
+
+
+Route::get('/candles', function () {
+    return view('candles', [
+        'candles' => Candle::all()
+    ]);
 });
 
-
+Route::get('/candle/{candle}', function ($id) {
+    return view('candle', [
+        'candle' => Candle::findOrFail($id)
+    ]);
+});

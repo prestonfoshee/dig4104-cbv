@@ -17,6 +17,7 @@ class CreateCandlesTable extends Migration
             $table->id();
             $table->string('slug')->unique();
             $table->string('name');
+            $table->string('type');
             $table->decimal('price', 4, 2);
             $table->timestamps();
         });

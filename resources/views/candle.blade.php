@@ -17,9 +17,9 @@
     <section class="overflow-hidden">
         <div class="container px-5 pb-24 pt-12 mb-12 mx-auto">
           <div class="lg:w-4/5 mx-auto flex">
-            <img alt="Large image of the selected candle" class="lg:w-1/2 w-full lg:h-auto h-full object-cover object-center rounded border-2 border-rufous" src="img/candles-blueberry-pie.png">
+            <img alt="Large image of the selected candle" class="lg:w-1/2 w-full lg:h-auto h-full object-cover object-center rounded border-2 border-rufous" src="{{ URL('img/').'/'.$candle->slug }}">
             <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-              <h1 class="text-4xl text-rufous font-cabin font-medium mb-3">Blueberry Pie</h1>
+              <h1 class="text-4xl text-rufous font-cabin font-medium mb-3">{{ $candle->name }}</h1>
               <div class="flex mb-4">
                 <span class="flex items-center">
                   <svg fill="#d84727" stroke="#d84727" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-indigo-500" viewBox="0 0 24 24">
@@ -52,7 +52,7 @@
                 </div>
               </div>
               <div class="flex">
-                <span class="font-cabin font-medium text-2xl text-vermilion">$24.00</span>
+                <span class="font-cabin font-medium text-2xl text-vermilion">${{ $candle->price }}</span>
                 <button class="flex ml-auto border-2 border-rosewood text-rosewood font-cabin rounded-sm py-2 px-6 focus:outline-none hover:bg-vermilion hover:text-black hover:border-vermilion">Add to cart</button>
               </div>
             </div>

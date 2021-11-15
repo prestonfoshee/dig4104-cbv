@@ -14,7 +14,7 @@
                     </div>
                 </div> --}}
             <div class="relative rounded-full bg-princeton-orange w-20 h-20 px-10 mx-auto">
-                <img class="absolute -top-1 right-1 w-20 h-20 mx-auto mt-2" src="img/icon-logo.png" alt="" />
+                <img class="absolute -top-1 right-1 w-20 h-20 mx-auto mt-2" src="{{ URL('img/icon-logo.png') }}" alt="" />
             </div>
             <div class="mx-auto md:ml-8">
                 <h1 class="font-flattery font-bold text-4xl text-white whitespace-nowrap">Candles by Victoria</h1>
