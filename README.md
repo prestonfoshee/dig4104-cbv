@@ -17,6 +17,7 @@
 
 1. In the root of the project directory, create a .env file
 2. Paste the following into the .env file:  
+
 APP_NAME=Laravel  
 APP_ENV=local  
 APP_KEY=base64:W2Dy7doduWxthXaKVwC3abh1jzksk1aKzGxXhpOjcbI=  
