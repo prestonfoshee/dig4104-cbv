@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCandlesTable extends Migration
+class CreateCartsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,8 @@ class CreateCandlesTable extends Migration
      */
     public function up()
     {
-        Schema::create('candles', function (Blueprint $table) {
+        Schema::create('carts', function (Blueprint $table) {
             $table->id();
-            $table->string('slug')->unique();
-            $table->string('name');
-            $table->string('type');
-            $table->string('img_url');
-            $table->decimal('price', 4, 2);
             $table->timestamps();
         });
     }
@@ -31,6 +26,6 @@ class CreateCandlesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('candles');
+        Schema::dropIfExists('carts');
     }
 }

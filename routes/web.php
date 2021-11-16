@@ -46,8 +46,8 @@ Route::get('/candles', function () {
     ]);
 });
 
-Route::get('/candle/{candle}', function ($id) {
+Route::get('/candle/{candle:slug}', function (Candle $candle) {
     return view('candle', [
-        'candle' => Candle::findOrFail($id)
+        'candle' => $candle
     ]);
 });
