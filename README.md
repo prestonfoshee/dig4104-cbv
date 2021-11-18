@@ -11,7 +11,7 @@
 ## Obtaining source code
 
 1. In your terminal, change directories to where you'd like to save the project
-2. Once in your desired directory, run “git clone [https://github.com/prestonfoshee/dig4104-cbv.git]"
+2. Once in your desired directory, run “git clone https://github.com/prestonfoshee/dig4104-cbv.git"
 3. run "cd dig4104-cbv" to switch to the project directory
 
 ## Starting the development server on your local machine
