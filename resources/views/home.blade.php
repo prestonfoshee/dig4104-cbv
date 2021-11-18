@@ -14,7 +14,7 @@
 </head>
 <body class="bg-bright-yellow">
     <x-header />
-    <div class="hidden lg:block relative bg-home-cover bg-no-repeat bg-cover p-72 bg-center w-screen h-full -mt-10 mb-12">
+    <div class="hidden lg:block relative bg-home-cover bg-no-repeat bg-cover p-72 bg-center h-full -mt-10 mb-12">
       <div class="">
         <h1 class="absolute top-12 left-0 right-0 font-roomettes text-5xl text-center text-white whitespace-nowrap">Welcome Our New Addition to the Victoria November Family</h1>
       </div>
@@ -59,21 +59,21 @@
         <section class="container px-24 py-8 mx-auto">
           <div class="flex flex-col md:flex-row">
             {{-- left section --}}
-            <div class="flex flex-col w-1/2 py-8 mx-4">
-              <div class="mx-auto w-1/3 h-1/3 mb-6">
+            <div class="flex flex-col md:w-1/2 py-8 mx-4">
+              <div class="mx-auto md:w-1/3 mb-6">
                 <img src="/img/scorpio-icon.png" alt="Scorpio collection logo" class="">
               </div>
               <div>
                 <h1 class="font-flattery text-princeton-orange text-4xl text-center mb-6">The Zodiac Collection</h1>
                 <h3 class=" font-roomettes text-4xl text-center text-rosewood mb-4">Scorpio</h3>
-                <div class="mx-auto w-4/6">
-                  <span class=" font-cabin text-white text-xl text-center">Celebrate your favorite Scorpio with this scoop-able, delectable candle that they can burn all month long.</span>
+                <div class="flex mx-auto">
+                  <span class="font-cabin text-white text-xl text-center">Celebrate your favorite Scorpio with this scoop-able, delectable candle that they can burn all month long.</span>
                 </div>
               </div>
             </div>
             {{-- right section --}}
-            <div class="flex w-1/2 py-8 mx-4">
-              <img src="/img/candles-smores-donut.png" alt="" class="h-full border-2 border-rufous rounded">
+            <div class="flex md:w-1/2 py-8 mx-auto md:mx-4">
+              <img src="/img/candles-smores-donut.png" alt="Photo of Smores Donut candle" class="border-2 border-rufous rounded">
             </div>
           </div>
         </section>

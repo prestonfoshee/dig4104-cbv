@@ -40,9 +40,7 @@
                   <span class="text-princeton-orange font-cabin ml-3 underline">12 Reviews</span>
                 </span>
               </div>
-              <p class="leading-relaxed text-lg text-rosewood font-flattery">
-                Brand new to the CBV line up! This stunning candle comes double wicked in a beautiful ribbed style jar with lid and is available in all our wonderful fragrances including our Create A Scent (CAS) option. This candle comes in our Create A Scent (CAS) option. We give you the opportunity to create a one of a kind fragrance by mixing two of our existing fragrances and giving your new scent creation a name! If you would prefer a single scent in this candle, just choose one scent from the drop down menu and we will take of the rest.
-              </p>
+              <p class="leading-relaxed text-lg text-rosewood font-flattery">{{ $candle->description }}</p>
               <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
                 <div class="flex items-center">
                   <p class="mr-3 font-medium font-cabin text-2xl text-vermilion">Quantity:</p>
@@ -59,5 +57,6 @@
           </div>
         </div>
     </section>
+    <x-footer />
 </body>
 </html>

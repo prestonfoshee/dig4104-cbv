@@ -17,12 +17,12 @@
     <section class="container py-8 mx-auto">
         <div class="flex flex-wrap justify-center -mx-4 -mb-10 text-center font-cabin">
             @foreach ($candles as $candle)
-                <div class="flex flex-col sm:flex-row sm:w-5/12 mb-10 px-7 mx-10 p-6 rounded-md bg-rosewood border-2 border-vermilion shadow-lg">
-                    <div class="rounded-sm h-64 overflow-hidden m-6">
-                        <img src="{{ URL('img/').'/'.$candle->img_url }}" alt="content" class="object-cover object-center h-full w-full">
+                <div class="flex flex-col sm:w-1/4 mb-16 px-7 mx-10 p-6 rounded-md bg-rosewood border-2 border-vermilion shadow-lg">
+                    <div class="rounded-sm h-64 overflow-hidden m-6 mx-auto">
+                        <img src="{{ URL('img/').'/'.$candle->img_url }}" alt="content" class="object-cover object-center h-full">
                     </div>
                     <div class="mx-auto flex flex-col w-1/2 my-auto">
-                        <h2 class="text-2xl font-medium text-princeton-orange mt-6 mb-3">{{ $candle->name }}</h2>
+                        <h2 class="text-2xl font-medium font-flattery text-princeton-orange mt-6 mb-3">{{ $candle->name }}</h2>
                         <span class="text-xl font-medium font-flattery text-princeton-orange mb-3">${{ $candle->price }}</span>
                         {{-- <button class="flex mx-auto mt-6 bg-princeton-orange border-0 py-2 px-5 focus:outline-none hover:bg-vermilion rounded" onclick="window.location=url('/candle/{{ $candle->id }}')">View details</button> --}}
                         <a href="candle/{{ $candle->slug }}" class="text-lg font-medium font-cabin text-princeton-orange underline hover:text-vermilion mb-3">View details</a>

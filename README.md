@@ -2,15 +2,16 @@
 
 ## Requirements
 
-- [PHP]
-- [NPM]
-- [MySQL]
-- [GIT]
+- Git
+- PHP
+- Composer
+- NPM
+- MySQL
 
 ## Obtaining source code
 
 1. In your terminal, change directories to where you'd like to save the project
-2. Once in your desired directory, run “git clone https://github.com/prestonfoshee/dig4104-cbv.git”
+2. Once in your desired directory, run “git clone [https://github.com/prestonfoshee/dig4104-cbv.git]"
 3. run "cd dig4104-cbv" to switch to the project directory
 
 ## Starting the development server on your local machine
@@ -71,42 +72,10 @@ PUSHER_APP_CLUSTER=mt1
 MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"  
 MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"  
 
-3. In your terminal, run "npm install"
-4. In your terminal, run "npm run dev" or "npm run watch"
-5. To connect to the database, run "mysql -uroot -p" in your terminal, then press enter again when prompted for the password
-6. Once inside the MySQL shell, run "create database cbv;"
-7. Press CTRL + D to exit the MySQL shell
-8. In your terminal, run "php artisan migrate" to create the tables in the DB
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+3. In your terminal, run "composer install"
+4. run "npm install"
+5. run "npm run dev" or "npm run watch"
+6. run "php artisan db"
+7. In the MySQL shell, run "create database cbv", then press CTRL + D to exit the shell
+8. run "php artisan migrate --seed"
+9. run "php artisan serve"
