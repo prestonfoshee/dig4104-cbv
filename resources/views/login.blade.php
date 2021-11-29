@@ -30,11 +30,12 @@
                     placeholder="Password" />
                 <button
                     type="submit"
-                    class="w-1/2 mx-auto text-center py-3 rounded bg-princeton-orange hover:bg-vermilion focus:outline-none font-cabin"
-                >Login</button>
+                    class="flex w-full mx-auto text-center py-3 rounded bg-princeton-orange hover:bg-vermilion focus:outline-none font-cabin">
+                    Login
+                </button>
             </div>
             <div class="flex mt-6">
-                <p class="font-cabin">Don't  have an account?</p>
+                <p class="font-cabin">Don't have an account?</p>
                 <a class="text-princeton-orange hover:text-vermilion ml-2 underline" href="/register">Create one</a>.
             </div>
         </div>

@@ -19,6 +19,7 @@ class CreateCandlesTable extends Migration
             $table->string('name');
             $table->string('type');
             $table->string('img_url');
+            $table->longText('description');
             $table->decimal('price', 4, 2);
             $table->timestamps();
         });

@@ -25,8 +25,22 @@
                 </button>
                 <button onclick="window.location='{{ url('/register') }}'"" class="inline-flex items-center bg-princeton-orange hover:bg-vermilion font-medium border-0 py-1 px-3 focus:outline-none rounded text-base mt-4 md:mt-0 mr-7">Sign up
                 </button> --}}
-                <a href="{{ url('/login') }}" class="text-princeton-orange font-bold hover:text-vermilion inline-flex items-center rounded mr-7 py-1 px-2 md:mt-0 mt-4 border-princeton-orange border hover:border-vermilion">LOGIN</a>
-                <a href="{{ url('/register') }}" class="text-princeton-orange font-bold hover:text-vermilion inline-flex items-center rounded mr-7 py-1 px-2 md:mt-0 mt-4 border-princeton-orange border hover:border-vermilion">SIGN UP</a>
+                @guest    
+                    <a href="{{ url('/login') }}" class="text-princeton-orange font-bold hover:text-vermilion inline-flex items-center rounded mr-7 py-1 px-2 md:mt-0 mt-4 border-princeton-orange border hover:border-vermilion">LOGIN</a>
+                    <a href="{{ url('/register') }}" class="text-princeton-orange font-bold hover:text-vermilion inline-flex items-center rounded mr-7 py-1 px-2 md:mt-0 mt-4 border-princeton-orange border hover:border-vermilion">SIGN UP</a>
+                @endguest
+
+                @auth
+                    <a class="text-princeton-orange font-bold hover:text-vermilion inline-flex items-center rounded mr-7 py-1 px-2 md:mt-0 mt-4 border-princeton-orange border hover:border-vermilion" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                    {{-- <a href="{{ url('/register') }}" class="text-princeton-orange font-bold hover:text-vermilion inline-flex items-center rounded mr-7 py-1 px-2 md:mt-0 mt-4 border-princeton-orange border hover:border-vermilion">SIGN UP</a> --}}
+                @endauth
                 <button onclick="window.location='{{ url('/cart') }}'"" class="inline-flex items-center">
                     <div class="text-3xl">
                         <i class="fa fa-shopping-cart font-medium border-0 text-princeton-orange cursor-pointer focus:outline-none hover:text-vermilion rounded mt-4 md:mt-0"></i>
@@ -36,3 +50,5 @@
         </div>
     </header>
 </div>
+
+{{-- {{ url('cart').'/'.Auth::id() }} --}}

@@ -15,6 +15,12 @@ class CreateCartsTable extends Migration
     {
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
+            $table->foreignId('candle_id');
+            $table->string('name');
+            $table->string('img_url');
+            $table->decimal('price', 4, 2);
+            $table->integer('quantity');
             $table->timestamps();
         });
     }

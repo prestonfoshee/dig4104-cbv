@@ -11,6 +11,7 @@
     <link href="http://fonts.cdnfonts.com/css/fresh-roomettes-personal-use" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@500&display=swap" rel="stylesheet">
     <script src="https://use.fontawesome.com/d80f87dcf4.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body class="bg-bright-yellow">
     <x-header />
@@ -41,22 +42,67 @@
                 </span>
               </div>
               <p class="leading-relaxed text-lg text-rosewood font-flattery">{{ $candle->description }}</p>
-              <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
-                <div class="flex items-center">
-                  <p class="mr-3 font-medium font-cabin text-2xl text-vermilion">Quantity:</p>
-                  <div class="relative">
-                    <input type="text" class="h-8 w-24 pr-8 pl-5 shadow-sm border-2 rounded focus:outline-none">
+              <form action="/addToCart" method="POST" id="cartForm">
+                @csrf
+                <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
+                  <div class="flex items-center">
+                    <p class="mr-3 font-medium font-cabin text-2xl text-vermilion">Quantity:</p>
+                    <div class="relative">
+                      <input type="text" name="candleQuantity" id="candleQuantity" class="h-8 w-24 pr-8 pl-5 shadow-sm border-2 rounded focus:outline-none">
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="flex">
-                <span class="font-cabin font-medium text-2xl text-vermilion">${{ $candle->price }}</span>
-                <button class="flex ml-auto border-2 border-rosewood text-rosewood font-cabin rounded-sm py-2 px-6 focus:outline-none hover:bg-vermilion hover:text-black hover:border-vermilion">Add to cart</button>
+                <div class="flex">
+                  <span class="font-cabin font-medium text-2xl text-vermilion">${{ $candle->price }}</span>
+                  <input type="hidden" name="candleId" value="{{ $candle->id }}" id="candleId">
+                  <input type="hidden" name="candleName" value="{{ $candle->name }}" id="candleName">
+                  <input type="hidden" name="candleImg" value="{{ $candle->img_url }}" id="candleImg">
+                  <input type="hidden" name="candlePrice" value="{{ $candle->price }}" id="candlePrice">
+                  <button type="submit" class="flex ml-auto border-2 border-rosewood text-rosewood font-cabin rounded-sm py-2 px-6 focus:outline-none hover:bg-vermilion hover:text-black hover:border-vermilion">Add to cart</button>
+                </div>
+              </form>
+              <div class="mt-5">
+                <span id="responseMessage" class="text-vermilion text-xl font-cabin font-medium hidden"></span>
               </div>
             </div>
           </div>
         </div>
     </section>
     <x-footer />
+    <script>
+      $("#cartForm").submit(function(e){
+        e.preventDefault();
+
+        let candleId = $("#candleId").val();
+        let candleName = $("#candleName").val();
+        let candleImg = $("#candleImg").val();
+        let candlePrice = $("#candlePrice").val();
+        let candleQuantity = $("#candleQuantity").val();
+        let _token = $("input[name=_token]").val();
+
+        $.ajax({
+          url: "/addToCart",
+          type: "POST",
+          data: {
+            candleId: candleId,
+            candleName: candleName,
+            candleImg: candleImg,
+            candlePrice: candlePrice,
+            candleQuantity: candleQuantity,
+            _token: _token
+          },
+          success: function(response) {
+            if(response) {
+              const message = response.message;
+              $("#responseMessage").fadeIn();
+              $("#responseMessage").html(message);
+            }
+          }
+        })
+      });
+      setTimeout(function() {
+          $("#responseMessage").fadeOut();
+      }, 6000);
+    </script>
 </body>
 </html>

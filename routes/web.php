@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\CandleController;
+use App\Http\Controllers\CartController;
 use App\Models\Candle;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,10 +34,14 @@ Route::get('/register', function () {
     return view('register');
 });
 
-Route::get('/cart', function () {
-    return view('cart');
-});
+Route::get('/cart', [CartController::class, 'cart'])->name('cart');
+Route::post('/addToCart', [CartController::class, 'add']);
+Route::delete('/removeFromCart', [CartController::class, 'remove']);
 
 Route::get('/candles', [CandleController::class, 'index']);
-
 Route::get('/candle/{candle:slug}', [CandleController::class, 'singleCandle']);
+
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();

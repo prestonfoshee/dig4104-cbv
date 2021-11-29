@@ -13,6 +13,7 @@
     <script src="https://use.fontawesome.com/d80f87dcf4.js"></script>
 </head>
 <body class=" bg-bright-yellow">
+  {{ dd(Auth::user()) }}
     <x-header />
     <section>
         <div class="container px-5 pt-12 pb-6 mx-auto">
